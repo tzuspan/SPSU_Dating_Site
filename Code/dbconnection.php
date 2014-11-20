@@ -17,7 +17,7 @@
 		// There was a problem accessing the script
 		// so let's currently just print the error
 		// and we will terminate running the script.
-		print "Error: " $ex;
+		print "Error: " $ex->errorMessage();
 		die();
 	}
 	
