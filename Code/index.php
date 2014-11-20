@@ -11,7 +11,7 @@
 <td colspan="3"><strong>Member Login </strong></td>
 </tr>
 <tr>
-<td width="78">Username</td>
+<td width="78">Username (Test Edit) </td>
 <td width="6">:</td>
 <td width="294"><input name="myusername" type="text" id="myusername"></td>
 </tr>
@@ -34,4 +34,4 @@
 
 
 </body>
-</html> 
+</html>
