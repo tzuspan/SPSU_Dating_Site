@@ -10,10 +10,14 @@
 	
 	try
 	{
-		$dbcon = new PDO('mysql:host='.$hostName.';dbname='.$databaseName, $userName, $password);	
+		$dbcon = mysqli_connect("$hostName", "$userName", "$password", "$databaseName");
 	}
-	catch(PDOException $ex)
+	catch(mysqli_sql_exception $ex)
 	{
-		print "Error: ".$ex->getMessage()."<br/>";
+		// There was a problem accessing the script
+		// so let's currently just print the error
+		// and we will terminate running the script.
+		print "Error: " $ex;
 		die();
 	}
+	
