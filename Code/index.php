@@ -11,14 +11,14 @@
 <td colspan="3"><strong>Member Login </strong></td>
 </tr>
 <tr>
-<td width="78">UserName</td>
+<td width="78">Email Address</td>
 <td width="6">:</td>
 <td width="294"><input name="myusername" type="text" id="myusername"></td>
 </tr>
 <tr>
 <td>Password</td>
 <td>:</td>
-<td><input name="mypassword" type="text" id="mypassword"></td>
+<td><input name="mypassword" type="password" id="mypassword"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -30,8 +30,9 @@
 </form>
 </tr>
 </table>
+<a href="create_user_account.php" align="center" ><p style="text-align:center">Create User</p></a>
 
 
 
 </body>
-</html>
+</html> 
