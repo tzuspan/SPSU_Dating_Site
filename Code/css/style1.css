@@ -1,0 +1,39 @@
+body {
+	background-color: #69ac3d;
+}
+#login_table {
+	background-color: #c3b773;
+	width: 300px
+	align: center;
+}
+#top {
+	text-align: center;
+}
+#login_col_left{
+	text-align: right;
+}
+#logo{
+	width:350px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+	#container {
+		width: 100%;
+	}
+	table{
+		background-color: #c8be63;
+		width: 95%;
+		align: center;
+	}
+	#logo{
+		width:95%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 5px;
+	}
+}
