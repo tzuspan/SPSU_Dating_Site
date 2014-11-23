@@ -167,7 +167,10 @@ CREATE TABLE `tbl_users` (
   `age` int(11) DEFAULT NULL,
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(45) DEFAULT NULL,
-  `sexual_orientation` enum('unspecified','heterosexual','bisexual','homosexual','asexual') NOT NULL,
+  `male_friend` bool NOT NULL,
+  `female_friend` bool NOT NULL,
+  `male_date` bool NOT NULL,
+  `female_date` bool NOT NULL,
   `about_me` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`)
@@ -176,14 +179,14 @@ CREATE TABLE `tbl_users` (
 -- ----------------------------
 -- Records of tbl_users
 -- ----------------------------
-INSERT INTO `tbl_users` VALUES ('1', 'mbyrd@spsu.edu', 'pass', 'male', '22', 'Mitchell', 'Byrd', 'heterosexual', 'I do all my own laundry');
-INSERT INTO `tbl_users` VALUES ('2', 'tzuspan@spsu.edu', 'pass', 'male', '35', 'Tim', 'Zuspan', 'bisexual', 'I do all my own stunts.');
-INSERT INTO `tbl_users` VALUES ('3', 'ASmith@yahoo.com', 'Smith123', 'female', '23', 'Ashley', 'Smith', 'heterosexual', 'I love to play video games');
-INSERT INTO `tbl_users` VALUES ('4', 'not18@gmail.com', 'not18', 'male', '18', 'Andre', 'Banker', 'heterosexual', 'I\'m not really 18');
-INSERT INTO `tbl_users` VALUES ('5', 'TJackson@yahoo.com', 'password123', 'female', '32', 'Tiffany', 'Jackson', 'bisexual', 'I love to get go out and have fun');
-INSERT INTO `tbl_users` VALUES ('6', 'Rbarner@spsu.edu', 'tester01', 'male', '23', 'Ronnie', 'Barner', 'heterosexual', 'I love to play xbox one and travel');
-INSERT INTO `tbl_users` VALUES ('7', 'BobCommander@yahoo.com', 'army01', 'male', '23', 'Bob', 'Commander', 'unspecified', 'Enjoying hauting, fishing, and outdoor sports.');
-INSERT INTO `tbl_users` VALUES ('8', 'JohnSmith@spsu.edu', 'John Test', 'male', '18', 'John', 'Smith', 'heterosexual', 'Enjoy chilling with friends.');
-INSERT INTO `tbl_users` VALUES ('9', 'Deon@spsu.edu', 'Johnson', 'male', '29', 'Deon', 'Johnson', 'bisexual', 'Like spending time with my son.');
-INSERT INTO `tbl_users` VALUES ('10', 'JessicaThompson@gmail.com', 'JThompson', 'female', '22', 'Jessica', 'Thompson', 'heterosexual', 'Love to party.');
-INSERT INTO `tbl_users` VALUES ('11', 'TimLee@spsu.edu', 'TimLee1', 'female', '19', 'Tim', 'Lee', 'heterosexual', 'I like to sing for the church.');
+INSERT INTO `tbl_users` VALUES ('1', 'mbyrd@spsu.edu', 'pass', 'male', '22', 'Mitchell', 'Byrd', '1', '1', '0', '1', 'I do all my own laundry');
+INSERT INTO `tbl_users` VALUES ('2', 'tzuspan@spsu.edu', 'pass', 'male', '35', 'Tim', 'Zuspan', '1', '1', '1', '1', 'I do all my own stunts.');
+INSERT INTO `tbl_users` VALUES ('3', 'ASmith@yahoo.com', 'Smith123', 'female', '23', 'Ashley', 'Smith', '0', '1', '1', '0', 'I love to play video games');
+INSERT INTO `tbl_users` VALUES ('4', 'not18@gmail.com', 'not18', 'male', '18', 'Andre', 'Banker', '1', '1', '0', '1', 'I\'m not really 18');
+INSERT INTO `tbl_users` VALUES ('5', 'TJackson@yahoo.com', 'password123', 'female', '32', 'Tiffany', 'Jackson', '1', '0', '1', '1', 'I love to get go out and have fun');
+INSERT INTO `tbl_users` VALUES ('6', 'Rbarner@spsu.edu', 'tester01', 'male', '23', 'Ronnie', 'Barner', '1', '1', '0', '1', 'I love to play xbox one and travel');
+INSERT INTO `tbl_users` VALUES ('7', 'BobCommander@yahoo.com', 'army01', 'male', '23', 'Bob', 'Commander', '1', '1', '0', '0', 'Enjoying hauting, fishing, and outdoor sports.');
+INSERT INTO `tbl_users` VALUES ('8', 'JohnSmith@spsu.edu', 'John Test', 'male', '18', 'John', 'Smith', '0', '0', '0', '1', 'Enjoy chilling with friends.');
+INSERT INTO `tbl_users` VALUES ('9', 'Deon@spsu.edu', 'Johnson', 'male', '29', 'Deon', 'Johnson', '1', '0', '1', '1', 'Like spending time with my son.');
+INSERT INTO `tbl_users` VALUES ('10', 'JessicaThompson@gmail.com', 'JThompson', 'female', '22', 'Jessica', 'Thompson', '1', '1', '1', '0', 'Love to party.');
+INSERT INTO `tbl_users` VALUES ('11', 'TimLee@spsu.edu', 'TimLee1', 'female', '19', 'Tim', 'Lee', '1', '1', '1', '0', 'I like to sing for the church.');
