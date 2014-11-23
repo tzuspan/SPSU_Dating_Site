@@ -28,7 +28,7 @@
 		</select><br><br>
 
 		Age<br>
-		<select name="Age" size="10">
+		<select name="Age">
 		<?php
 			for ($i=1; $i<=125; $i++)
 			{
