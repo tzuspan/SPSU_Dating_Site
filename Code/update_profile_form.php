@@ -41,9 +41,9 @@
 
 		Interested in<br>
 		<input id="femaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox">
-		Friendship with Women<br>
+		Befriending Women<br>
 		<input id="maleFriend" name="MaleFriend" value="maleFriend" type="checkbox">
-		Friendship with Men<br>
+		Befriending Men<br>
 		<input id="femaleDate" name="FemaleDate" value="femaleDate" type="checkbox">
 		Dating Women<br>
 		<input id="maleDate" name="MaleDate" value="maleDate" type="checkbox">
