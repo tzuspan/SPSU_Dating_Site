@@ -1,7 +1,7 @@
 <?php
 echo '<link rel="stylesheet" type="text/css" href="css/nav_bar.css">';
 echo '<div class="navigation_bar">';
-echo 	'<form method="post" action="logout.php">';
+echo 	'<form method="post" action="index.php">';
 echo 		'<input id="logout_btn" type="submit" value="Log Out">';
 echo 	'</form>';
 echo 	'<form name="pairing_page_button" method="post" action="pairing_page.php">';

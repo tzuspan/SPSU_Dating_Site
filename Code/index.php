@@ -28,9 +28,9 @@
 		</tr>
 	</table>
 </form>
-<a href="create_user_account.php" align="center" ><p style="text-align:center">Create User</p></a>
+<a href="submit_profile_form.php" align="center" ><p style="text-align:center">Create User</p></a>
 
 
 
 </body>
-</html> 
+</html>
