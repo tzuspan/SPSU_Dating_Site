@@ -28,16 +28,26 @@
 		</select><br><br>
 
 		Age<br>
-		<input type="range" min="0" max="125" value="0" step="1" onchange="showAge(this.value)" /><br>
-		<span id="age">0</span>Years<br><br>
+		<select name="Age">
+		<?php
+			for ($i=1; $i<=125; $i++)
+			{
+				?>
+					<option value="<?php echo $i;?>"><?php echo $i;?></option>
+				<?php
+			}
+		?>
+		</select><br><br>
 
-		Interest in Women<br>
-		<input type="range" min="0" max="3" value="0" step="1" onchange="showInterestInWomen(this.value)" /><br>
-		<span id="interestInWomen">None</span><br><br>
-
-		Interest in Men<br>
-		<input type="range" min="0" max="3" value="0" step="1" onchange="showInterestInMen(this.value)" /><br>
-		<span id="interestInMen">None</span><br><br>
+		Interested in<br>
+		<input id="femaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox">
+		Friendship with Women<br>
+		<input id="maleFriend" name="MaleFriend" value="maleFriend" type="checkbox">
+		Friendship with Men<br>
+		<input id="femaleDate" name="FemaleDate" value="femaleDate" type="checkbox">
+		Dating Women<br>
+		<input id="maleDate" name="MaleDate" value="maleDate" type="checkbox">
+		Dating Men<br><br>
 
 		About Me<br>
 		<textarea rows="4" cols="50" name="AboutMe" maxlength="5000">about me text</textarea><br><br>
@@ -45,48 +55,5 @@
 		<input type="submit" value="Submit">
 	</form>
 </div>
-<script type="text/javascript">
-function showAge(newValue)
-{
-	document.getElementById("age").innerHTML = newValue;
-}
-function showInterestInWomen(newValue)
-{
-	switch (newValue)
-	{
-		case "0":
-			document.getElementById("interestInWomen").innerHTML = "None";
-			break;
-		case "1":
-			document.getElementById("interestInWomen").innerHTML = "Friendship";
-			break;
-		case "2":
-			document.getElementById("interestInWomen").innerHTML = "Romance";
-			break;
-		case "3":
-			document.getElementById("interestInWomen").innerHTML = "Both";
-			break;
-	}
-}
-function showInterestInMen(newValue)
-{
-	switch (newValue)
-	{
-		case "0":
-			document.getElementById("interestInMen").innerHTML = "None";
-			break;
-		case "1":
-			document.getElementById("interestInMen").innerHTML = "Friendship";
-			break;
-		case "2":
-			document.getElementById("interestInMen").innerHTML = "Romance";
-			break;
-		case "3":
-			document.getElementById("interestInMen").innerHTML = "Both";
-			break;
-	}
-}
-</script>
-
 </body>
 </html>
