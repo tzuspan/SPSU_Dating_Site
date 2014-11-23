@@ -40,10 +40,10 @@ function PrintUserMessage($messageId, $recipient, $sender, $userId)
 		echo "</p>";
 		
 		echo "<div>";
-		echo "<form action='send_message.php' method='POST'>";
-		echo "<textarea rows='4' cols='50' name='MessageReply' maxlength='5000'></textarea><br><br>";
-		echo "<input type='submit' value='Submit'>";
-		echo "<input type='hidden' value='$recipient'>";
+		echo "<form id='form1' action='send_message.php' method='POST'>";
+			echo "<textarea id='MessageReply' rows='4' cols='50' name='MessageReply' maxlength='5000'></textarea><br><br>";
+			echo "<input type='submit' value='Reply'>";
+			echo "<input type='hidden' name='recipient' value='$sender'>";
 		echo "</form>";
 		echo "</div>";
 	}
@@ -51,23 +51,26 @@ function PrintUserMessage($messageId, $recipient, $sender, $userId)
 
 function GetUserName($theirId, $senderId, $userId)
 {
-	// Variable scopage..
-	include 'dbconnection.php';
-
-	// First thing we will do is get the user name..
-	$userNameQuery = "SELECT first_name, last_name FROM tbl_users WHERE user_id='$theirId'";
-	$result = mysqli_query($dbcon, $userNameQuery);
-	$userRow = mysqli_fetch_array($result, MYSQL_NUM);
-	
-	$firstName = $userRow[0];
-	$lastName = $userRow[1];
-	
-	echo "Latest message with "; 
-	echo $firstName;
-	echo " ";
-	echo $lastName;
-	echo "</a>";
-	echo "<br>";
+	if($senderId != $userId && $theirId == $userId)
+	{
+		// Variable scopage..
+		include 'dbconnection.php';
+		
+		// First thing we will do is get the user name..
+		$userNameQuery = "SELECT first_name, last_name FROM tbl_users WHERE user_id='$senderId'";
+		$result = mysqli_query($dbcon, $userNameQuery);
+		$userRow = mysqli_fetch_array($result, MYSQL_NUM);
+		
+		$firstName = $userRow[0];
+		$lastName = $userRow[1];
+		
+		echo "Latest message with "; 
+		echo $firstName;
+		echo " ";
+		echo $lastName;
+		echo "</a>";
+		echo "<br>";
+	}
 }
 
 function PrintMessageError()
@@ -113,6 +116,9 @@ else
 			$row = mysqli_fetch_array($result, MYSQL_NUM);
 			$recipient = $row[0];
 			
+			echo $recipient;
+			echo $row[1];
+			
 			if($row[0] != $userId && $row[1] != $userId) 
 			{
 				PrintMessageError();
@@ -125,7 +131,7 @@ else
 	}
 	else
 	{
-		$query = "SELECT message_id, recipient_id, sender_id FROM tbl_recipients WHERE recipient_id='$userId' ORDER BY message_id ASC";
+		$query = "SELECT message_id, recipient_id, sender_id FROM tbl_recipients WHERE recipient_id='$userId' ORDER BY message_id DESC";
 		$result = mysqli_query($dbcon, $query);
 		$rowCount = @mysqli_num_rows($result);
 	

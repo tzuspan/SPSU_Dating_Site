@@ -7,8 +7,39 @@
 <?php session_start(); ?>
 </head>
 <body>
-<?php include 'navigation_bar.php'; ?>
-<?php echo 'uid : '.$_SESSION["uid"]; ?>
+
+<?php 
+
+include 'dbconnection.php';
+include 'navigation_bar.php'; 
+
+if(!isset($_POST['MessageReply']))
+{
+	echo "You must have valid text to reply!";
+}
+
+if(!isset($_POST['recipient']))
+{
+	echo "Invaid user id!";
+}
+
+$replyText = $_POST['MessageReply'];
+$recipientId = $_POST['recipient'];
+$senderId = $_SESSION['uid'];
+
+$replyText = mysqli_real_escape_string($dbcon, $replyText);
+
+// Do the message first
+$query = "INSERT INTO tbl_messages (message_text) VALUES ('$replyText')";
+$result = mysqli_query($dbcon, $query);
+
+$messageId = $dbcon->insert_id;
+
+// now insert the recipient information
+$query = "INSERT INTO tbl_recipients (message_id, recipient_id, sender_id) VALUES ('$messageId', '$recipientId', '$senderId')";
+$result = mysqli_query($dbcon, $query);
+
+?>
 
 </body>
 </html>
