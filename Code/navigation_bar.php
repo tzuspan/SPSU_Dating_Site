@@ -7,7 +7,7 @@ echo 	'</form>';
 echo 	'<form name="pairing_page_button" method="post" action="pairing_page.php">';
 echo 		'<input class="nav_btn" type="submit" value="Pairing Page">';
 echo 	'</form>';
-echo 	'<form method="post" action="edit_profile.php">';
+echo 	'<form method="post" action="update_profile_form.php">';
 echo 		'<input class="nav_btn" type="submit" value="Edit Profile">';
 echo 	'</form>';
 echo 	'<form method="post" action="view_tickles.php">';
