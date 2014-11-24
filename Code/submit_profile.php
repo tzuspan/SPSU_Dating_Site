@@ -14,6 +14,19 @@ session_start();
 include 'dbconnection.php';
 include 'navigation_bar.php';
 
+$replyText = $_POST[''];
+
+$email_address = $_POST['EmailAddress'];
+$password = $_POST['Password'];
+$gender = $_POST['Gender'];
+$age = $_POST['Age'];
+$first_name = $_POST['FirstName'];
+$last_name = $_POST['LastName'];
+$mf = $_POST['MaleFriend'];
+$ff = $_POST['FemaleFriend'];
+$md = $_POST['MaleDate'];
+$fd = $_POST['FemaleDate'];
+$about_me = $_POST['AboutMe'];
 
 
 $query = "INSERT INTO tbl_users
@@ -32,7 +45,6 @@ $query = "INSERT INTO tbl_users
 )
 VALUES
 (
-	'$user_id',
 	'$email_address',
 	'$password',
 	'$gender',

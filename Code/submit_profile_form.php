@@ -10,7 +10,7 @@
 <?php echo 'uid : '.$_SESSION["uid"]; ?>
 
 <div>
-	<form action="profile_form.php">
+	<form action="submit_profile.php">
 		First Name:<br>
 		<input required type="text" name="FirstName"	value="firstName"><br><br>
 		Last Name:<br>
@@ -39,17 +39,17 @@
 		</select><br><br>
 
 		Interested in<br>
-		<input id="femaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox">
+		<input id="FemaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox">
 		Befriending Women<br>
-		<input id="maleFriend" name="MaleFriend" value="maleFriend" type="checkbox">
+		<input id="MaleFriend" name="MaleFriend" value="maleFriend" type="checkbox">
 		Befriending Men<br>
-		<input id="femaleDate" name="FemaleDate" value="femaleDate" type="checkbox">
+		<input id="FemaleDate" name="FemaleDate" value="femaleDate" type="checkbox">
 		Dating Women<br>
-		<input id="maleDate" name="MaleDate" value="maleDate" type="checkbox">
+		<input id="MaleDate" name="MaleDate" value="maleDate" type="checkbox">
 		Dating Men<br><br>
 
 		About Me<br>
-		<textarea rows="4" cols="50" name="AboutMe" maxlength="5000">about me text</textarea><br><br>
+		<textarea id="AboutMe" rows="4" cols="50" name="AboutMe" maxlength="5000">about me text</textarea><br><br>
 
 		<input type="submit" value="Submit">
 	</form>
