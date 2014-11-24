@@ -41,7 +41,7 @@
 				$lastName = $row["last_name"];
 			}
 		}
-		
+
 		$query = "SELECT email_address FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -49,7 +49,7 @@
 				$emailAddress = $row["email_address"];
 			}
 		}
-		
+
 		$query = "SELECT password FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -57,7 +57,7 @@
 				$password = $row["password"];
 			}
 		}
-		
+
 		$query = "SELECT gender FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -65,7 +65,7 @@
 				$gender = $row["gender"];
 			}
 		}
-		
+
 		$query = "SELECT age FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -73,7 +73,7 @@
 				$age = $row["age"];
 			}
 		}
-		
+
 		$query = "SELECT female_friend FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -81,7 +81,7 @@
 				$ff = $row["female_friend"];
 			}
 		}
-		
+
 		$query = "SELECT male_friend FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -89,7 +89,7 @@
 				$mf = $row["male_friend"];
 			}
 		}
-		
+
 		$query = "SELECT female_date FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -97,7 +97,7 @@
 				$fd = $row["female_date"];
 			}
 		}
-		
+
 		$query = "SELECT male_date FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -105,7 +105,7 @@
 				$md = $row["male_date"];
 			}
 		}
-		
+
 		$query = "SELECT about_me FROM tbl_users where user_id='$userId'";
 		$result = mysqli_query($dbcon, $query);
 		if (mysqli_num_rows($result) > 0) {
@@ -117,7 +117,7 @@
 ?>
 
 <div>
-	<form action="profile_form.php">
+	<form action="update_profile.php">
 		First Name:<br>
 		<input required type="text" name="FirstName"	value="<?php echo $firstName;?>"><br><br>
 		Last Name:<br>
