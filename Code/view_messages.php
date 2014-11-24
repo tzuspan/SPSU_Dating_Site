@@ -116,9 +116,6 @@ else
 			$row = mysqli_fetch_array($result, MYSQL_NUM);
 			$recipient = $row[0];
 			
-			echo $recipient;
-			echo $row[1];
-			
 			if($row[0] != $userId && $row[1] != $userId) 
 			{
 				PrintMessageError();
