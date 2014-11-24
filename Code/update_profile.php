@@ -29,35 +29,27 @@ else
 $about_me = $_POST['AboutMe'];
 
 
-$query = "INSERT INTO tbl_users
-(
-	email_address,
-	password,
-	gender,
-	age,
-	first_name,
-	last_name,
-	male_friend,
-	female_friend,
-	male_date,
-	female_date,
-	about_me
-)
-VALUES
-(
-	'$email_address',
-	'$password',
-	'$gender',
-	'$age',
-	'$first_name',
-	'$last_name',
-	$mf,
-	$ff,
-	$md,
-	$fd,
-	'$about_me'
-)";
-
+$query = "UPDATE tbl_users SET email_address=$email_address WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET password=$password WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET gender=$gender WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET age=$age WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET first_name=$first_name WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET last_name=$last_name WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET male_friend=$mf WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET female_friend=$ff WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET male_date=$md WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET female_date=$fd WHERE id=$uid";
+$result = mysqli_query($dbcon, $query);
+$query = "UPDATE tbl_users SET about_me=$about_me WHERE id=$uid";
 $result = mysqli_query($dbcon, $query);
 
 header("location:index.php");
