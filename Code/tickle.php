@@ -9,7 +9,7 @@ $query = 'INSERT INTO swe3613_db05p2.tbl_tickles(
 
 $result = mysqli_query($dbcon, $query);
 $row_count = @mysqli_num_rows($result);
-echo $query;
+
 header("location:pairing_page.php");
 
 ?>
