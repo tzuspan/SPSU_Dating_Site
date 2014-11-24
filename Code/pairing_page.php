@@ -4,19 +4,22 @@
 <title>SPSU Dating site</title>
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php session_start(); ?>
 </head>
 <body>
+
+
+<?php include 'navigation_bar.php';?>
+<br> </br>
+
+
 <?php 
-session_start();
-include 'navigation_bar.php'; 
-include 'dbconnection.php';
+session_start() ;
+include 'dbconnection.php'; 
 
 
 $pool = array();
 $i = 0;
-
-
-
 
 // get current user's preferences and gender
 	$query = "SELECT tbl_users.male_friend,
@@ -157,9 +160,10 @@ else {
 		echo 'About Me:<br>'.$prospect_about_me.'<br>';
 	?>
 </div>
+<br> </br>
 <div id="tickle_or_run">
 	<form name="login_form" method="post" action="run.php">
-		<input class="torr_btn" type="submit" name="run" value="Run" style="float: left;">
+		<input  class="torr_btn" type="submit" name="run" value="Run" style="float: left">
 	</form>
 	<form name="login_form" method="post" action="tickle.php">
 		<input class="torr_btn" type="submit" name="tickle" value="Tickle" style="float: right;">
