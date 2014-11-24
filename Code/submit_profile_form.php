@@ -10,7 +10,6 @@
 ?>
 </head>
 <body>
-<?php echo 'uid : '.$_SESSION["uid"]; ?>
 
 <div>
 	<form action="submit_profile.php">
