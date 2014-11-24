@@ -7,13 +7,12 @@
 <?php session_start(); ?>
 </head>
 <body>
-<?php include 'navigation_bar.php'; ?>
 <?php echo 'uid : '.$_SESSION["uid"]; ?>
 
 <div>
 	<form action="profile_form.php">
 		First Name:<br>
-		<input required type="text" name="FirstName"		value="firstName"><br><br>
+		<input required type="text" name="FirstName"	value="firstName"><br><br>
 		Last Name:<br>
 		<input required type="text" name="LastName"		value="lastName"><br><br>
 		Email Address:<br>
