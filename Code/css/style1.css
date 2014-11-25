@@ -22,7 +22,29 @@ body {
 	margin-right: auto;
 	padding: 10px;
 }
-
+.user_info{
+	padding: 5px;
+	max-width: 850px;
+	background-color: #c3b773;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+#tickle_or_run{
+	padding: 5px;
+	max-width: 150px;
+	overflow: auto;
+	background-color: #c3b773;
+	border-style: solid;
+	border-width: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: center;
+}
 
 @media screen and (max-width: 500px) {
 	#container {
@@ -39,5 +61,29 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		padding-bottom: 5px;
+	}
+	.user_info{
+		border-style: solid;
+		border-width: 1px;
+		background-color: #c3b773;
+		height: auto;
+		overflow: auto;
+		padding: 2px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	#tickle_or_run{
+		border-style: solid;
+		border-width: 1px;
+		background-color: #c3b773;
+		height: auto;
+		overflow: auto;
+		padding: 2px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.torr_btn{
+		height: 25px;
+		font-size: 9px;
 	}
 }

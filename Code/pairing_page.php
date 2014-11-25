@@ -159,10 +159,10 @@ else {
 </div>
 <div id="tickle_or_run">
 	<form name="login_form" method="post" action="run.php">
-		<input type="submit" name="run" value="Run" style="float: center;">
+		<input class="torr_btn" type="submit" name="run" value="Run" style="float: left;">
 	</form>
 	<form name="login_form" method="post" action="tickle.php">
-		<input type="submit" name="tickle" value="Ticlke" style="float: center;">
+		<input class="torr_btn" type="submit" name="tickle" value="Tickle" style="float: right;">
 	</form>
 </div>
 
