@@ -28,27 +28,91 @@
 		$userId = $_SESSION["uid"];
 
 		$query = "SELECT first_name FROM tbl_users where user_id='$userId'";
-		$firstName = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$firstName = $row["first_name"];
+			}
+		}
 		$query = "SELECT last_name FROM tbl_users where user_id='$userId'";
-		$lastName = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$lastName = $row["last_name"];
+			}
+		}
+		
 		$query = "SELECT email_address FROM tbl_users where user_id='$userId'";
-		$emailAddress = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$emailAddress = $row["email_address"];
+			}
+		}
+		
 		$query = "SELECT password FROM tbl_users where user_id='$userId'";
-		$password = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$password = $row["password"];
+			}
+		}
+		
 		$query = "SELECT gender FROM tbl_users where user_id='$userId'";
-		$gender = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$gender = $row["gender"];
+			}
+		}
+		
 		$query = "SELECT age FROM tbl_users where user_id='$userId'";
-		$age = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$age = $row["age"];
+			}
+		}
+		
 		$query = "SELECT female_friend FROM tbl_users where user_id='$userId'";
-		$ff = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$ff = $row["female_friend"];
+			}
+		}
+		
 		$query = "SELECT male_friend FROM tbl_users where user_id='$userId'";
-		$mf = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$mf = $row["male_friend"];
+			}
+		}
+		
 		$query = "SELECT female_date FROM tbl_users where user_id='$userId'";
-		$fd = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$fd = $row["female_date"];
+			}
+		}
+		
 		$query = "SELECT male_date FROM tbl_users where user_id='$userId'";
-		$md = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$md = $row["male_date"];
+			}
+		}
+		
 		$query = "SELECT about_me FROM tbl_users where user_id='$userId'";
-		$aboutMe = mysqli_query($dbcon, $query);
+		$result = mysqli_query($dbcon, $query);
+		if (mysqli_num_rows($result) > 0) {
+			while($row = mysqli_fetch_assoc($result)) {
+				$aboutMe = $row["about_me"];
+			}
+		}
 	}
 ?>
 
@@ -67,11 +131,11 @@
 		<select required name="Gender">
 		<?php
 		if ($gender=='male') {
-			echo "<option value="male">Male</option>";
-			echo "<option value="female">Female</option>";
+			echo "<option value='male'>Male</option>";
+			echo "<option value='female'>Female</option>";
 		} else {
-			echo "<option value="female">Female</option>";
-			echo "<option value="male">Male</option>";
+			echo "<option value='female'>Female</option>";
+			echo "<option value='male'>Male</option>";
 		}
 		?>
 		</select><br><br>
@@ -91,16 +155,16 @@
 
 		Interested in<br>
 		<input id="femaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox"
-			<?php if ($ff=='1') {echo <"checked="checked">"} ?> >
+			<?php if ($ff=='1') {echo "checked='checked'";} ?> >
 		Befriending Women<br>
 		<input id="maleFriend" name="MaleFriend" value="maleFriend" type="checkbox"
-			<?php if ($mf=='1') {echo <"checked="checked">"} ?> >
+			<?php if ($mf=='1') {echo "checked='checked'";} ?> >
 		Befriending Men<br>
-		<input id="femaleDate" name="FemaleDate" value="femaleDate" type="checkbox"
-			<?php if ($fd=='1') {echo <"checked="checked">"} ?> >
+		<input id='femaleDate' name='FemaleDate' value='femaleDate' type='checkbox'
+			<?php if ($fd=='1') {echo "checked='checked'";} ?> >
 		Dating Women<br>
 		<input id="maleDate" name="MaleDate" value="maleDate" type="checkbox"
-			<?php if ($md=='1') {echo <"checked="checked">"} ?> >
+			<?php if ($md=='1') {echo "checked='checked'";} ?> >
 		Dating Men<br><br>
 
 		About Me<br>

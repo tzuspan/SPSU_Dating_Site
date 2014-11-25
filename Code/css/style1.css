@@ -45,6 +45,9 @@ body {
 	margin-top: 10px;
 	text-align: center;
 }
+#AboutMe{
+	width: 75%;
+}
 
 @media screen and (max-width: 500px) {
 	#container {
@@ -85,5 +88,8 @@ body {
 	.torr_btn{
 		height: 25px;
 		font-size: 9px;
+	}
+	#AboutMe{
+		width: 98%;
 	}
 }

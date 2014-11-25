@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div>
+<div class="user_info">
 	<form action="submit_profile.php" method="post">
 		First Name:<br>
 		<input required type="text" name="FirstName"	value="firstName"><br><br>
@@ -50,7 +50,7 @@
 		Dating Men<br><br>
 
 		About Me<br>
-		<textarea id="AboutMe" rows="4" cols="50" name="AboutMe" maxlength="5000">about me text</textarea><br><br>
+		<textarea id="AboutMe" rows="4" cols="50" name="AboutMe" >about me text</textarea><br><br>
 
 		<input type="submit" value="Submit">
 	</form>
