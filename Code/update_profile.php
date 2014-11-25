@@ -29,28 +29,39 @@ else
 $about_me = $_POST['AboutMe'];
 
 
-$query = "UPDATE tbl_users SET email_address=$email_address WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET password=$password WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET gender=$gender WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET age=$age WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET first_name=$first_name WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET last_name=$last_name WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET male_friend=$mf WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET female_friend=$ff WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET male_date=$md WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET female_date=$fd WHERE id=$uid";
-$result = mysqli_query($dbcon, $query);
-$query = "UPDATE tbl_users SET about_me=$about_me WHERE id=$uid";
+$query = "UPDATE tbl_users SET email_address=$email_address WHERE id=".$_SESSION['uid']."";
+echo $query;
 $result = mysqli_query($dbcon, $query);
 
-header("location:index.php");
+$query = "UPDATE tbl_users SET password=$password WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET gender=$gender WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET age=$age WHERE id=id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET first_name=$first_name WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET last_name=$last_name WHERE id=id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET male_friend=$mf WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET female_friend=$ff WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET male_date=$md WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET female_date=$fd WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+$query = "UPDATE tbl_users SET about_me=$about_me WHERE id=".$_SESSION['uid']."";
+$result = mysqli_query($dbcon, $query);
+
+header("location:pairing_page.php");
 ?>

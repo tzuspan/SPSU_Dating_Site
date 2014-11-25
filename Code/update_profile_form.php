@@ -117,7 +117,7 @@
 ?>
 
 <div>
-	<form action="update_profile.php">
+	<form action="update_profile.php" method="post" >
 		First Name:<br>
 		<input required type="text" name="FirstName"	value="<?php echo $firstName;?>"><br><br>
 		Last Name:<br>
