@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>SPSU Dating site</title>
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php
-	error_reporting(E_ALL);
-?>
-
-</head>
-<body>
-
 <?php
 session_start();
 
 include 'dbconnection.php';
-include 'navigation_bar.php';
 
-$replyText = $_POST[''];
-
-$email_address = $_POST['EmailAddress'];
+//$replyText = $_POST[''];
+$email_address = $_POST["EmailAddress"];
 $password = $_POST['Password'];
 $gender = $_POST['Gender'];
 $age = $_POST['Age'];
 $first_name = $_POST['FirstName'];
 $last_name = $_POST['LastName'];
-$mf = $_POST['MaleFriend'];
-$ff = $_POST['FemaleFriend'];
-$md = $_POST['MaleDate'];
-$fd = $_POST['FemaleDate'];
+if( isset($_POST['MaleFriend']) )	
+	$mf = 1;
+else
+	$mf = 0;
+if( isset($_POST['FemaleFriend']) )	
+	$ff = 1;
+else
+	$ff = 0;
+if( isset($_POST['MaleDate'])   )
+	$md = 1;
+else	
+	$md = 0;
+if( isset($_POST['FemaleDate']) )
+	$fd = 1;
+else	
+	$fd = 0;
 $about_me = $_POST['AboutMe'];
 
 
@@ -54,16 +51,14 @@ VALUES
 	'$age',
 	'$first_name',
 	'$last_name',
-	'$mf,
-	'$ff,
-	'$md,
-	'$fd,
+	$mf,
+	$ff,
+	$md,
+	$fd,
 	'$about_me'
 )";
 
 $result = mysqli_query($dbcon, $query);
 
+header("location:index.php");
 ?>
-
-</body>
-</html>

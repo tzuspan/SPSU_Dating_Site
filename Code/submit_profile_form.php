@@ -11,13 +11,13 @@
 <body>
 
 <div>
-	<form action="submit_profile.php">
+	<form action="submit_profile.php" method="post">
 		First Name:<br>
 		<input required type="text" name="FirstName"	value="firstName"><br><br>
 		Last Name:<br>
 		<input required type="text" name="LastName"		value="lastName"><br><br>
 		Email Address:<br>
-		<input required type="text" name="EmailAddress"	value="emailAddress"><br><br>
+		<input required type="text" name="EmailAddress"	value="EmailAddress" id="EmailAddress"><br><br>
 		Password:<br>
 		<input required type="text" name="Password"		value="password"><br><br>
 
@@ -26,7 +26,7 @@
 			<option value="male">Male</option>
 			<option value="female">Female</option>
 		</select><br><br>
-
+		
 		Age<br>
 		<select name="Age">
 		<?php
@@ -40,13 +40,13 @@
 		</select><br><br>
 
 		Interested in<br>
-		<input id="FemaleFriend" name="FemaleFriend" value="femaleFriend" type="checkbox">
+		<input id="FemaleFriend" name="FemaleFriend" value="checked" type="checkbox">
 		Befriending Women<br>
-		<input id="MaleFriend" name="MaleFriend" value="maleFriend" type="checkbox">
+		<input id="MaleFriend" name="MaleFriend" value="checked" type="checkbox">
 		Befriending Men<br>
-		<input id="FemaleDate" name="FemaleDate" value="femaleDate" type="checkbox">
+		<input id="FemaleDate" name="FemaleDate" value="checked" type="checkbox">
 		Dating Women<br>
-		<input id="MaleDate" name="MaleDate" value="maleDate" type="checkbox">
+		<input id="MaleDate" name="MaleDate" value="checked" type="checkbox">
 		Dating Men<br><br>
 
 		About Me<br>
